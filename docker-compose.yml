@@ -24,9 +24,19 @@ services:
     restart: always
     environment:
         POSTGRES_DB: postgresdb
-        POSTGRES_USER: admin
-        POSTGRES_PASSWORD: abcd
+        POSTGRES_USER: root
+        POSTGRES_PASSWORD: root
     ports:
         - 5432:5432
     volumes:
         - ./docker/postgres/:/docker-entrypoint-initdb.d/
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    environment:
+        PGADMIN_DEFAULT_EMAIL: jaroslaw.konopka@student.pk.edu.pl
+        PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+        - 5050:80
+    

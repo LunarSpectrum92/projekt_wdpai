@@ -1,5 +1,4 @@
 body{
-    background-color: beige;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,11 +8,13 @@ body{
 }
 
 .flex_column_center_center{
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0.1em;
+    padding-top: 10px;
 }
 
 
@@ -21,7 +22,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    background-image: linear-gradient(to bottom, #4d94ff, #0052cc);
 }
 
 .container{
@@ -37,10 +38,21 @@ form > input, form > text area, form > button{
     width: 400px;
     border-radius: 1em;
     padding: 1em;
+    margin: 0.1em;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    border: none;
 }  
 
 
 form > button{
     box-sizing: content-box;
+    background-color: #2fc75d;
+    border: none;
+}
+
+
+
+.container p1{
+    font-size: 40px;
+    margin: 10px;
 }

@@ -1,7 +1,7 @@
 FROM postgres
 
-ENV POSTGRES_PASSWORD docker
-ENV POSTGRES_DB db
-ENV POSTGRES_USER docker
+ENV POSTGRES_PASSWORD root
+ENV POSTGRES_DB postgresdb
+ENV POSTGRES_USER root
 
 COPY . /app/database

@@ -1,0 +1,75 @@
+
+
+.main-text{
+    padding: 0%;
+    border: none;
+    margin:0%;
+    background-color:  transparent;
+}
+
+
+
+.button a{
+    text-decoration: none;
+}
+
+
+.button button{
+    font-size: 2vw; /* Użyj jednostki vw (viewport width) dla skalowania zależnego od szerokości widoku */
+    line-height: 1.1; /* Zależne od font-size */
+    font-weight: 900;
+    font-size: 20px;
+    padding: 1.5vw 5vw; /* Użyj jednostek vw do skalowalnego wypełnienia */
+    max-width: 90%; /* Maksymalna szerokość przycisku, aby uniknąć zbytniego rozciągania */
+    display: flex; /* Aby przycisk dostosowywał się do zawartości */
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #fff;
+    background-color:#2fc75d;
+    height: 7vh;
+    width: 20vw;
+}
+
+
+
+.button button:hover{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+@media screen and (max-width: 768px) {
+    
+.button{
+    display: flex; /* Aby przycisk dostosowywał się do zawartości */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ 
+    border-radius: 20px;
+  
+    width: 100vw;
+}
+
+
+.button button{
+    font-size: 2vw; /* Użyj jednostki vw (viewport width) dla skalowania zależnego od szerokości widoku */
+    line-height: 1.1; /* Zależne od font-size */
+    font-weight: 900;
+    font-size: 30px;
+    padding: 1.5vw 5vw; /* Użyj jednostek vw do skalowalnego wypełnienia */
+    max-width: 90%; /* Maksymalna szerokość przycisku, aby uniknąć zbytniego rozciągania */
+    display: flex; /* Aby przycisk dostosowywał się do zawartości */
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #fff;
+    background-color:#2fc75d;
+    height: 70px;
+    width: 350px;
+}
+
+
+
+}

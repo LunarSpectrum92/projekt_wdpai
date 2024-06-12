@@ -1,0 +1,252 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    background-image: url('abcg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Poppins';
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: 'Poppins';
+    padding: 0%;
+    border: none;
+    margin:0%;
+}
+
+
+/* Styl dla klasy .main */
+.main {
+    background-image: linear-gradient(to bottom, #4d94ff, #0052cc);
+    display: grid;
+    grid-template-columns: 20% 60% 20%; /* Ustawienie jednej kolumny na mniejszych ekranach */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+    color:aliceblue;
+}
+
+/* Zapytanie media queries dla mniejszych ekranów */
+@media screen and (max-width: 768px) {
+    .main {
+        grid-template-columns: 20% 60% 20%; /* Powrót do oryginalnej liczby kolumn */
+    }
+}
+
+
+.main-text{
+    padding: 0%;
+    border: none;
+    margin:0%;
+    
+    
+}
+
+
+
+/* Styl dla klasy .text */
+.text {
+     /* Częściowo przezroczyste tło */
+    padding: 10% 5% 5%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    line-height: 1.5;
+
+}
+
+.sub-text{
+    display: flex;
+    flex-direction: column;
+    
+   
+}
+
+.text p1 {
+    font-size: 2.5vw;
+
+
+    max-width: 80%;
+
+
+}
+
+/* Styl dla znacznika p w klasie .text */
+.text p {
+    font-size: 1.5vw;
+    max-width: 80%;
+
+}
+
+
+.text img{
+    height: 50vw;
+    width: 50vw;
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .text {
+        flex-direction: column;
+        align-items: center;
+       
+
+   }
+   .sub-text{
+        align-items: center;
+        padding-bottom: 50px;
+        padding-top: 50px;
+        width: 100vw;
+   }
+   .text p {
+    font-size: 3vw;
+    max-width: 70%;
+
+}
+
+.text p1 {
+    font-size: 4vw;
+    max-width: 70%;
+
+}
+
+.text img{
+    height: 70vw;
+    width: 50vw;
+
+}
+
+
+}
+
+
+
+/* Styl dla klasy .container */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Elastyczne kolumny */
+    gap: 20px; /* większa przerwa między boxami */
+    width: 90%; /* Szerokość 90% */
+    max-width: 1200px; /* Maksymalna szerokość kontenera */
+    margin: 0 auto; /* Centrowanie kontenera */
+    padding-top: 30px; /* Dodanie marginesu dla kontenera */
+    padding-bottom: 30px;
+    justify-content: center;  
+    
+}
+
+/* Styl dla klasy .box */
+.box {
+    background-color: aliceblue;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5vw;
+    border-radius: 15px; /* Użyj pikseli zamiast procentów */
+    display: flex; /* Ustawienie kontenera flexbox */
+    flex-direction: column; /* Ustawienie elementów w kolumnie */
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Wyśrodkowanie zawartości w pionie */
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Cień */
+    height: 30vw;
+    width: 25vw;
+
+}
+
+
+
+.box p1{
+    font-size: 2vw;
+}
+
+.box button{
+    font-size: 2vw; /* Użyj jednostki vw (viewport width) dla skalowania zależnego od szerokości widoku */
+    line-height: 1.1; /* Zależne od font-size */
+    font-weight: 900;
+    padding: 1.5vw 5vw; /* Użyj jednostek vw do skalowalnego wypełnienia */
+    max-width: 90%; /* Maksymalna szerokość przycisku, aby uniknąć zbytniego rozciągania */
+    display: inline-block; /* Aby przycisk dostosowywał się do zawartości */
+    text-align: center;
+    border: none;
+    border-radius: 5vw; /* Użyj jednostek vw dla zaokrąglenia krawędzi */
+    background-color: #2fc75d;
+    color: #fff;
+}
+
+.box button:hover{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Zapytanie media queries dla jeszcze mniejszych ekranów */
+@media screen and (max-width: 768px) {
+    .container {
+        font-size: 0.5em;
+        grid-template-columns: 1fr; /* Elastyczne kolumny */
+        gap: 15px; /* mniejsza przerwa między boxami */
+        justify-items: center;
+        
+ 
+    }
+
+
+    .box{
+        width: 60%;
+        font-size: 2vw;
+    }
+
+
+    .box p1{
+        font-size: 3vw;
+    }
+}
+
+
+
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+}
+
+
+
+@media screen and (min-width: 1500px) {
+    .text p {
+        font-size: 1.2vw;
+    }
+    .text p1 {
+        font-size: 2vw;
+    }
+    .box {
+        height: 25vw;
+        width: 20vw;
+    }
+    .box p1 {
+        font-size: 1.5vw;
+    }
+    .box button {
+        font-size: 1.5vw;
+        padding: 1vw 4vw;
+        border-radius: 4vw;
+    }
+}

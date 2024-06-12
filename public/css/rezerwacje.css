@@ -1,0 +1,55 @@
+.container_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.1em;
+    padding-top: 10px;
+    border-radius: 1em;
+    padding: 1.5em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: white; /* Add background color here */
+}
+
+.main-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.flex_column_center_center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.1em;
+    padding-top: 10px;
+}
+
+form > button, form > select, form > textarea{ 
+    width: 400px;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 0.1em;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    border: none;
+}
+
+form > textarea{
+    height: 30vh;
+    resize: none;
+    width: 400px; /* Ensuring the textarea has the same width */
+}
+
+form > button{
+    box-sizing: content-box;
+    background-color: #2fc75d;
+    border: none;
+}
+
+form > select{
+    box-sizing: content-box;
+    border: none;
+}

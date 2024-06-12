@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Poppins';
+    padding: 0%;
+    border: none;
+    margin:0%;
+}
+
+
+
+
+.main {
+    background-image: linear-gradient(to bottom, #4d94ff, #0052cc);
+    display: grid;
+    grid-template-columns: 20% 60% 20%; /* Ustawienie jednej kolumny na mniejszych ekranach */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+    color:aliceblue;
+}
+/* Styl dla elementu o id="a" */
+#a {
+    background-color: inherit; /* Dziedziczy kolor tła z .main */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+
+/* Styl dla elementu o id="b" */
+#b{
+    background-color: inherit; /* Dziedziczy kolor tła z .main */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+
+}
+
+
+#b a{
+    color:aliceblue;
+    text-decoration: none;
+}
+
+
+
+#b a:hover{
+    text-decoration: underline;
+    text-decoration-color:white;
+    text-underline-offset: 0.4em;
+}
+
+
+/* Styl dla elementu a */
+a {
+    padding: 1em;
+}
+
+/* Styl dla elementu o id="c" */
+#c {
+    background-color: inherit; /* Dziedziczy kolor tła z .main */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+
+
+#c button{
+    background-color: inherit;
+    border:0;
+}
+
+#c button i {
+    width: 100%; /* Wypełnienie całego tła przycisku */
+    height: 100%; /* Wypełnienie całego tła przycisku */
+    font-size: 40px; /* Dostosowanie rozmiaru ikony */
+    color: white;
+}
+
+#c button i:hover{
+    border-radius: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
