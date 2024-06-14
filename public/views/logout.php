@@ -14,7 +14,19 @@
 </head>
 <body>
 
+<?php 
+if(isset($_SESSION['userEmail']) && $_SESSION['userEmail'] != ''){
+    if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
+        include 'adminHeader.php';
+    } else {
+        include 'Header.php';
+    }
+} else {
+    include 'Header.php';
+}
+?>
 
+<div class="main">
     <div class="container">
         <h1>Moje konto</h1>
 
@@ -36,7 +48,7 @@
             <button type="submit" name="log_out">Wyloguj</button>
         </form>
         
-  
+        </div>  
     </div>
 </body>
 </html>

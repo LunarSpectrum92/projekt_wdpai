@@ -1,0 +1,132 @@
+/* Reset styles and basic setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-top: 100px; /* Adjusted margin-top */
+    padding: 0 128px; /* Padding simplified */
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 64px; /* Adjusted padding for smaller s  creens */
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding: 0 32px; /* Further adjusted padding for mobile */
+    }
+}
+
+/* Section headings */
+section h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    color: #333d29;
+    font-size: 36px;
+}
+
+.br{
+    display: none;
+}
+.contact-info{
+    margin-top: 120px;
+}
+
+/* Button */
+.button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    display: inline-block;
+    color: #FFF;
+    font-size: 20px;
+    background-color: #333D29;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .button {
+        font-size: 24px;
+    }
+}
+
+/* Contact form */
+main .contact .container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+main .contact .container h2 {
+    color: #FFF;
+}
+
+main .contact .container form {
+    display: block;
+    margin: 0 auto;
+    max-width: 680px;
+}
+main .contact {
+    background-color: #333D29;
+}
+
+main .contact .container form .form-grid {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+    main .contact .container form .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+main .contact .container form .form-element,
+main .contact .container form .form-area {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    display: block;
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 20px;
+    color: #313131;
+}
+
+main .contact .container form .form-element::placeholder,
+main .contact .container form .form-area::placeholder {
+    color: #AAA;
+}
+
+main .contact .container form .form-area {
+    grid-column: 1 / -1;
+}
+
+main .contact .container form .right-align {
+    text-align: right;
+}
+
+main .contact .button {
+    background-color: #7F4F24;
+}

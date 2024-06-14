@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body class = "flex_row_center_center">
+    <div class="main">
 <div class= "container">
-    <p1 class="t" > login </p1>
+    <h1 class="t" > login </h1>
     
 
     <form class = "flex_column_center_center" action="login" method="post"> 
@@ -28,6 +29,7 @@
 
     <p> Nie masz jeszcze konta? <a href="http://localhost:8080/register"> Zarejestruj się </a> </p>  
 
+</div>
 </div>
 </body>
 </html>

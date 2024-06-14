@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">     
+    <link rel="stylesheet" type="text/css" href="public/css/register.css">     
     <title>Document</title>
 </head>
 <body class = "flex_row_center_center">
+    <div class="main">
 <div class= "container">
-    <p1 class="t" > login </p1>
+    <p1 class="t" > register </p1>
     
 
     <form class="flex_column_center_center" method="POST">
@@ -34,6 +35,7 @@
 
     
 
+</div>
 </div>
 </body>
 </html>

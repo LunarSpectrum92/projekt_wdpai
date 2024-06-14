@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 128px;
+    padding-right: 128px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    color: #333d29;
+    font-size: 36px;
+}
+
+.button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    display: inline-block;
+    color: #FFF;
+    font-size: 20px;
+    background-color: #333D29;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .button {
+        font-size: 24px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+main section.banner {
+    color: #FFF;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("abcg.jpg");
+    background-position: top right;
+    background-size: cover;
+}
+
+main section.banner:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: #B6AD90;
+    opacity: 0.8;
+}
+
+main section.banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+main section.banner .container h1 {
+    font-size: 72px;
+    margin-bottom: 32px;
+    color: #333D29;
+}
+
+main section.banner .container h1 span {
+    color: #7F4F24;
+}
+
+@media (max-width: 767px) {
+    main section.banner .container h1 {
+        font-size: 32px;
+    }
+}
+
+main section.banner .container h3 {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 32px;
+    color: #656D4A;
+}
+
+@media (max-width: 767px) {
+    main section.banner .container h3 {
+        font-size: 20px;
+    }
+}
+
+main .services {
+    background-color: #e0e1dd;
+}
+
+main .services .container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+main .services .container .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+}
+
+@media (max-width: 1024px) {
+    main .services .container .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    main .services .container .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+main .services .container .services-grid .service {
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
+}
+
+main .services .container .services-grid .service .content {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+main .services .container .services-grid .service .content h3, 
+main .services .container .services-grid .service .content p {
+    margin-bottom: 20px;
+    color: #333D29;
+}
+
+main .services .container .services-grid .service .content a {
+    align-self: center;
+    opacity: 0.5;
+    transition: 0.4s;
+}
+
+main .services .container .services-grid .service .content a:hover {
+    opacity: 1;
+}
+
+main .projects {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+main .projects .container {
+    overflow: hidden;
+    padding: 0;
+}
+
+main .projects .projects-grid {
+    display: flex;
+    gap: 16px;
+    cursor: grab;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    user-select: none;
+}
+
+.projects-grid::-webkit-scrollbar {
+    display: none;
+}
+
+main .projects .projects-grid .project {
+    flex: 0 0 auto;
+    width: 300px;
+    border-radius: 16px;
+}
+
+main .projects .projects-grid .project .content {
+    opacity: 0.7;
+    color: #FFF;
+    padding: 16px;
+    background-color: #333D29;
+    border-radius: 20px;
+    height: 35vh;
+    width: 100%;
+    transition: 0.4s;
+}
+
+main .projects .projects-grid .project .content h3 {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+    main .projects .projects-grid .project .content h3 {
+        font-size: 28px;
+    }
+}
+
+main .projects .projects-grid .project .content p {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+    main .projects .projects-grid .project .content p {
+        font-size: 16px;
+    }
+}
+
+main .projects .projects-grid .project:hover .content {
+    opacity: 1;
+}
+
+main .contact {
+    background-color: #333D29;
+}
+
+main .contact .container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+main .contact .container h2 {
+    color: #FFF;
+}
+
+main .contact .container form {
+    display: block;
+    margin: 0 auto;
+    max-width: 680px;
+}
+
+main .contact .container form .form-grid {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+    main .contact .container form .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+main .contact .container form .form-grid .form-element,
+main .contact .container form .form-grid .form-area {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    display: block;
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 20px;
+    color: #313131;
+}
+
+main .contact .container form .form-grid .form-element::placeholder,
+main .contact .container form .form-grid .form-area::placeholder {
+    color: #AAA;
+}
+
+main .contact .container form .form-grid .form-area {
+    grid-column: 1 / -1;
+}
+
+main .contact .container form .right-align {
+    text-align: right;
+}
+
+main .contact .button {
+    background-color: #7F4F24;
+}
+
+@media (max-width: 767px) {
+    .hide-mob {
+        display: none;
+    }
+}

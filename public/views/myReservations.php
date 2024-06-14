@@ -43,7 +43,7 @@
             $ServiceId = intval($order->getServiceId());
             $UserId = intval($order->getUserId());
             
-            $a = $userRepository->getUser($UserId)->getEmail();
+            $a = $userRepository->getUserById($UserId)->getEmail();
             $b = $serviceRepository->getObject($ServiceId)->getserviceName();
 
             ?>

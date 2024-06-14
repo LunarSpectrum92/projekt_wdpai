@@ -3,49 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="public/css/style_main.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <title>Document</title>
+    <title>main</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="public/css/MainStyle.css" />
 </head>
 <body>
-
-<!-- Dołączamy górny pasek -->
 <?php include 'header.php'; ?>
 
-<div class="main-text">
+    <main>
+        <section class="banner">
+            <div class="container">
+                <h1>
+                Innowacyjne rozwiązania <br class="hide-mob" />
+                <span>dla cyfrowej</span> przyszłości
+                </h1>
 
-    <div class="text">
-        <div class="sub-text">
-        <p1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione porro earum doloribus eveniet error temporibus! Voluptatibus veritatis officia dolore eius, tenetur, repellendus labore illo similique, fugiat neque exercitationem placeat necessitatibus!  </p1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione porro earum doloribus eveniet error temporibus! Voluptatibus veritatis officia dolore eius, tenetur, repellendus labore illo similique, fugiat neque exercitationem placeat necessitatibus!</p>
+                <h3>Kompleksowe usługi IT dla Twojej firmy</h3>
+
+                <a href="#" class="button">dowiedz sie więcej</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>usługi</h2>
+                
+                <div class="services-grid">
+                <?php
+        require_once __DIR__.'/../../src/repository/ServiceRepository.php';
+        $ServiceRepository = new ServiceRepository();
+        $serviceObj = $ServiceRepository->getObjects();
+        foreach($serviceObj as $serobj) {
+            echo '<div class="service">
+
+            <div class="content">
+                <h3>' . $serobj->getserviceName() . '</h3>
+                <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </p>
+                <a href="#" class="button">zarezerwuj termin</a>
+
         </div>
+    </div>';
+        }
         
-    </div>
-
-    <div class="container">
-        <div class="box" id="box_a">
-            <p1>Zdalna pomoc techniczna</p1>
-            <p>Szybka i profesjonalna pomoc bez wychodzenia z domu.</p>
-            <button>zarezrwuj</button>
-        </div>
-        <div class="box" id="box_b">
-            <p1>Instalacja urządzeń sieciowych </p1>
-            <p>Profesjonalna instalacja i konfiguracja urządzeń sieciowych zapewni Ci stabilne połączenie i efektywną pracę.</p>
-            <button>zarezrwuj</button>
-        </div>
-        <div class="box" id="box_c">
-            <p1>Programy comarch</p1>
-            <p>Oferujemy kompleksowe rozwiązania Comarch, które zaspokoją potrzeby Twojej firmy i umożliwią efektywną pracę.</p>
-            <button>zarezrwuj</button>
-        </div>     
-    </div>
-
-    <footer class="footer">
-        <p>© 2024 LinkLogic. All rights reserved.</p>
-    </footer>
-   
+        ?>
 </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+        <h2>Nasi Partnerzy</h2>    
+        <div class="container">
+                
+                
+                <div class="projects-grid">
+                <div class="project">
+    <div class="content">
+        <h3>TechNova Solutions</h3>
+        <p>TechNova Solutions oferuje zaawansowane rozwiązania chmurowe i IT. Specjalizuje się w zarządzaniu danymi oraz bezpieczeństwie w chmurze.</p>
+    </div>
+</div>
+
+<div class="project">
+    <div class="content">
+        <h3>CyberGuardians Inc.</h3>
+        <p>CyberGuardians Inc. to lider w bezpieczeństwie cybernetycznym, oferujący ochronę przed cyberatakami oraz audyty bezpieczeństwa IT.</p>
+    </div>
+</div>
+
+<div class="project">
+    <div class="content">
+        <h3>DataWave Analytics</h3>
+        <p>DataWave Analytics specjalizuje się w analityce danych i big data, dostarczając narzędzia do analizy biznesowej i wizualizacji danych.</p>
+    </div>
+</div>
+
+<div class="project">
+    <div class="content">
+        <h3>DevOps Dynamics</h3>
+        <p>DevOps Dynamics oferuje rozwiązania w zakresie DevOps, automatyzacji procesów IT i monitorowania aplikacji.</p>
+    </div>
+</div>
+
+<div class="project">
+    <div class="content">
+        <h3>QuantumLeap Innovations</h3>
+        <p>QuantumLeap Innovations specjalizuje się w sztucznej inteligencji i uczeniu maszynowym, dostarczając innowacyjne rozwiązania AI.</p>
+    </div>
+</div>
+
+<div class="project">
+    <div class="content">
+        <h3>NetWorkX Communications</h3>
+        <p>NetWorkX Communications zajmuje się rozwiązaniami sieciowymi i telekomunikacyjnymi, oferując projektowanie i zarządzanie sieciami LAN/WAN.</p>
+    </div>
+</div>
+
+<div class="project">
+    <div class="content">
+        <h3>SoftWareHouse</h3>
+        <p>SoftWareHouse specjalizuje się w tworzeniu oprogramowania na zamówienie, dostarczając rozwiązania dopasowane do potrzeb klientów z różnych sektorów.</p>
+    </div>
+</div>
+
+<div class="project">
+    <div class="content">
+        <h3>CloudBridge Services</h3>
+        <p>CloudBridge Services oferuje kompleksowe rozwiązania do zarządzania IT w chmurze, specjalizując się w migracji do chmury i zarządzaniu zasobami.</p>
+    </div>
+</div>
+
+<div class="project">
+    <div class="content">
+        <h3>InnoTech Labs</h3>
+        <p>InnoTech Labs prowadzi badania i rozwój w technologiach IT, w tym IoT, AR, VR i blockchain.</p>
+    </div>
+</div>
+
+<div class="project">
+    <div class="content">
+        <h3>GreenIT Solutions</h3>
+        <p>GreenIT Solutions zajmuje się ekologicznymi rozwiązaniami IT, redukując ślad węglowy i wspierając zrównoważony rozwój.</p>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                
+                <form>
+                    <div class="form-grid">
+                        <input type="text" name="name" id="name" placeholder="Name" class="form-element" />
+                        <input type="email" name="email" id="email" placeholder="Email" class="form-element" />
+                        <textarea name="message" id="message" placeholder="Messsage" class="form-area"></textarea>
+                    </div>
+                    <div class="right-align">
+                        <input type="submit" value="Send message" class="button" />
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="public/js/main.js"></script>
 
 </body>
 </html>

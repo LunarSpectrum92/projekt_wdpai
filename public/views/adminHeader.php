@@ -15,7 +15,7 @@
     <nav>
         <ul class="menu">
             <li>
-                <a href="adminUsers">uzytkownicy <i class='bx bx-chevron-down'></i></a>
+                <a href="adminUsers">użytkownicy <i class='bx bx-chevron-down'></i></a>
                 <ul class="dropdown">
                     <li><a href="adminUsers?filter=client" class="client-link">klieci</a></li>
                     <li><a href="adminUsers?filter=employee" class="employee-link">pracownicy</a></li>

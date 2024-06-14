@@ -26,5 +26,25 @@ class AccessController extends AppController{
 
 
 
+    
+    public static function AccessCheckEmployee($pathName){
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+
+        if(isset($_SESSION['role']) && $_SESSION['role'] == 'employee'){
+            return ($pathName);
+        }    
+
+
+        return 'main';
+
+    }
+
+
+
+
+
 
 }

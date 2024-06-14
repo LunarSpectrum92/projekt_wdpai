@@ -32,12 +32,12 @@
                         <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                         </p>
-                        <a href="rezerwacje" class="button">zarezerwuj Termin</a>
+                        <a href="rezerwacje" class="button">Zarezerwój Termin</a>
                     </div>
                 </div>';
                     $colorIndex++;
                     if ($colorIndex >= count($colors)) {
-                        $colorIndex = 0;
+                        $colorIndex = 0; // Reset index if it exceeds the array length
                     }
                 }
                 ?>

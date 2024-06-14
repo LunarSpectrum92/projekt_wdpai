@@ -23,32 +23,36 @@
     
 
     function checker(roleType) {
-        const roles = document.querySelectorAll('.role');
-        roles.forEach(role => {
-            const card = role.closest('.reservation-card');
-            const roleText = role.textContent.trim(); 
-            const role1 = roleText.replace('Rola: ', '');
-            if (role1 !== roleType) { 
-                card.style.display = 'none';
-            } else { 
-                card.style.display = 'block';
+        const users = document.querySelectorAll('.abc'); // Zmiana na '.abc' aby obejmować kontener użytkownika i jego zamówienia
+    
+        users.forEach(userContainer => {
+            const roleElement = userContainer.querySelector('.role');
+            const roleText = roleElement.textContent.trim().replace('Rola: ', '');
+    
+            if (roleText !== roleType) {
+                userContainer.style.display = 'none'; // Ukryj cały kontener użytkownika i jego zamówienia
+            } else {
+                userContainer.style.display = 'flex'; // Pokaż cały kontener użytkownika i jego zamówienia
             }
         });
     }
+    
 
     function checker1(statusType) {
         const statuses = document.querySelectorAll('.status');
         statuses.forEach(status => {
             const card = status.closest('.reservation-card');
-            
-        
-
+            const a = card.nextElementSibling.firstElementChild;
+          
             const statusText = status.textContent.trim(); 
             const status1 = statusText.replace('status wykonania: ', '');
             if (status1 !== statusType) { 
                 card.style.display = 'none';
+                a.style.display = 'none';
+
             } else { 
                 card.style.display = 'block';
+                a.style.display = 'block';
 
             }
         });

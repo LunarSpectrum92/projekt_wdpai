@@ -17,6 +17,7 @@ class OrderRepository extends Repository implements RepositoryInterface{
             session_start();
         }
         try {
+            if($_SESSION['role'] == 'client'){
             $userRepository = new UserRepository();
             $user = $userRepository->getUser($_SESSION['userEmail']);
             $userId = $user->getId();
@@ -26,13 +27,17 @@ class OrderRepository extends Repository implements RepositoryInterface{
             VALUES(:serviceId, :userId, :description, :status)
             ');
             $stmt->bindParam(':serviceId', $service_id);
-            $stmt->bindParam(':userId', $userId); // Poprawiłem błąd w nazwie parametru
+            $stmt->bindParam(':userId', $userId);
             $stmt->bindParam(':description', $description);
             $stmt->bindParam(':status', $status);
             $stmt->execute();
             $order = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
-            return $order;
+            return true;
+        }
+            else{
+                echo 'tylko klienci i moga dodawac rezerwacje';
+            }
         } catch (PDOException $e) {
             return false;
         }
@@ -96,10 +101,10 @@ class OrderRepository extends Repository implements RepositoryInterface{
         return $orderObj;
 
     } catch (PDOException $e) {
-        // Log the exception if necessary
         error_log("Database error: " . $e->getMessage());
         return [];
     }}
+
 
 
 
@@ -172,7 +177,7 @@ class OrderRepository extends Repository implements RepositoryInterface{
 
 
     }
-    public function createObject(){}
+    public function createObject($id, $id1){}
     
     
     

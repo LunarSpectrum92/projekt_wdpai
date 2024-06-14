@@ -47,6 +47,9 @@ class SecurityController extends AppController{
         }elseif($user->getRole() == 'admin'){
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/adminDashboard"); 
+        }elseif($user->getRole() == 'employee'){
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/main");
         }
 
     }
@@ -86,6 +89,8 @@ class SecurityController extends AppController{
         if($user){
             return $this->render('register', ['messages' => ['jest juz konto zarejestrowane na podany email!']]);
         }
+
+
 
 
         try {

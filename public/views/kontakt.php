@@ -3,48 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="public/css/style_main.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> 
-    <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <title>Document</title>
+    <title>main</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="public/css/kontakt.css" />
 </head>
 <body>
 <?php include 'header.php'; ?>
-<div class="main-text">
 
-    <div class="text">
-        <div class="sub-text">
-        <p1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione porro earum doloribus eveniet error temporibus! Voluptatibus veritatis officia dolore eius, tenetur, repellendus labore illo similique, fugiat neque exercitationem placeat necessitatibus!  </p1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione porro earum doloribus eveniet error temporibus! Voluptatibus veritatis officia dolore eius, tenetur, repellendus labore illo similique, fugiat neque exercitationem placeat necessitatibus!</p>
-        </div>
-        <img src="public/css/abc.png" alt="mans">
-    </div>
+    <main>
 
-    <div class="container">
-        <div class="box" id="box_a">
-            <p1>Zdalna pomoc techniczna</p1>
-            <p>Szybka i profesjonalna pomoc bez wychodzenia z domu.</p>
-            <button>zarezrwuj</button>
-        </div>
-        <div class="box" id="box_b">
-            <p1>Instalacja urządzeń sieciowych </p1>
-            <p>Profesjonalna instalacja i konfiguracja urządzeń sieciowych zapewni Ci stabilne połączenie i efektywną pracę.</p>
-            <button>zarezrwuj</button>
-        </div>
-        <div class="box" id="box_c">
-            <p1>Programy comarch</p1>
-            <p>Oferujemy kompleksowe rozwiązania Comarch, które zaspokoją potrzeby Twojej firmy i umożliwią efektywną pracę.</p>
-            <button>zarezrwuj</button>
-        </div>
+        <section class="contact-info" id="contact-info">
+            <h2>Informacje <br class="br"></br> Kontaktowe</h2>    
+            <div class="container">
+                <div class="contact-info-grid">
+                    <div class="contact-item">
+                        <div class="content">
+                            <h3>Adres Biura</h3>
+                            <p>ul. Przykładowa 123<br>00-123 Miasto<br>Polska</p>
+                        </div>
+                    </div>
 
-        
-    </div>
-    <footer class="footer">
-        <p>© 2024 LinkLogic. All rights reserved.</p>
-    </footer>
-   
-</div>
+                    <div class="contact-item">
+                        <div class="content">
+                            <h3>Telefon</h3>
+                            <p>+48 123 456 789</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="content">
+                            <h3>Email</h3>
+                            <p><a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="content">
+                            <h3>Godziny Otwarcia</h3>
+                            <p>Poniedziałek - Piątek: 9:00 - 17:00<br>Sobota: 10:00 - 14:00<br>Niedziela: Zamknięte</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                
+                <form>
+                    <div class="form-grid">
+                        <input type="text" name="name" id="name" placeholder="Name" class="form-element" />
+                        <input type="email" name="email" id="email" placeholder="Email" class="form-element" />
+                        <textarea name="message" id="message" placeholder="Messsage" class="form-area"></textarea>
+                    </div>
+                    <div class="right-align">
+                        <input type="submit" value="Send message" class="button" />
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="public/js/main.js"></script>
 
 </body>
 </html>

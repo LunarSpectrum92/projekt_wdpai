@@ -6,6 +6,8 @@ require_once 'AccessController.php';
 require_once __DIR__.'/../repository/OrderRepository.php';
 require_once __DIR__.'/../repository/ServiceRepository.php';
 require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__.'/../repository/EmployeeOrdersRepository.php';
+
 
 
 
@@ -18,6 +20,16 @@ class DefaultController extends AppController {
     {
         $this->render('main');
     }
+
+    public function ofertatemp()
+    {
+        $this->render('ofertatemp');
+    }
+
+
+
+
+
     
     public function oferta()
     {
@@ -46,8 +58,40 @@ class DefaultController extends AppController {
         $this->render('myReservations');
     }
 
+    public function myEmployeeOrders()
+    {
 
+        if(!$this->isPost()){
+            $this->render(AccessController::AccessCheckEmployee('myEmployeeOrders'));
+        }
     
+        $repoOrder = new OrderRepository;
+        $repoUser = new UserRepository;
+
+        $repoEmployeeOrder = new EmployeeOrdersRepository;
+
+  
+            if (isset($_POST['done']) && !empty($_POST['done'])) {
+                
+                $orderId = htmlspecialchars($_POST['done']);
+                
+                $result = $repoOrder->changeObject($orderId, 'wykonane');
+                if($result == true){
+                $url = "http://$_SERVER[HTTP_HOST]";
+                header("Location: {$url}/myEmployeeOrders");
+                }else{
+                    $url = "http://$_SERVER[HTTP_HOST]";
+                    header("Location: {$url}/adminReservations");
+                    echo"<script language='javascript'>
+                        alert(nie udało sie zmienic statusu);
+                    </script>
+                    ";
+                }
+            }
+    }
+
+
+
     
 
     public function rezerwacje()
@@ -57,9 +101,14 @@ class DefaultController extends AppController {
         }
         
         if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true) {
-            // Redirect to login page or handle unauthorized access
-            // Replace 'login' with the actual login page route
             header("Location: /login");
+            exit;
+        }
+
+
+
+        if ($_SESSION['role'] != 'client') {
+            header("Location: /main");
             exit;
         }
 
@@ -78,13 +127,13 @@ class DefaultController extends AppController {
             $order = $orderRepository->createOrder($usługi, $comments);
     
             if($order){
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/info");
+                header("Location: /info");
+
         }else{
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/main");
+            header("Location: /main");
+
         }
-            exit; // Ensure no further code is executed after header redirection
+            exit; 
         } else {
            
         }

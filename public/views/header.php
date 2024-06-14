@@ -23,7 +23,9 @@
             <li><a href="oferta">oferta</a></li>
             <li><?php 
             if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+                if($_SESSION['role'] == 'client'){
                 echo '<a href="rezerwacje">rezerwacja</a>';
+                }
             } else {
                 echo '<a href="login">rezerwacje</a>';
             }
@@ -36,7 +38,7 @@
             if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true && $repo->getUser($_SESSION['userEmail'])->getRole() == 'client') {
                 echo '<a href="myReservations">Rezerwacje</a>';
             } else if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true && $repo->getUser($_SESSION['userEmail'])->getRole() == 'employee'){
-                echo '<a href="login">zadania</a>';
+                echo '<a href="myEmployeeOrders">zadania</a>';
             }
             ?>
             </li>

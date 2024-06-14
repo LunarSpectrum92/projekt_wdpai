@@ -63,7 +63,7 @@ class ServiceRepository extends Repository implements RepositoryInterface{
 
     public function getObjectsById($id){}
     public function deleteObject($id){}
-    public function createObject(){}
+    public function createObject($id, $id1){}
     public function changeObject($id, $text){}
 
 

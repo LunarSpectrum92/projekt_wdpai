@@ -58,6 +58,7 @@ nav .menu li .dropdown {
 nav .menu li:hover .dropdown {
     display: block;
     background-color: white;
+    
 }
 
 nav .menu li .dropdown li a {
@@ -70,19 +71,24 @@ button.login {
     color: cornsilk;
     border-radius: 10px;
     cursor: pointer;
+    border: none;
+
 }
 
 button.login:hover {
     background: cornsilk;
     color: #112C66;
-    transition: 0.3s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    transition: 0.5s;
 }
 
 nav .menu li a:hover {
     text-decoration: underline;
     text-decoration-color: white;
     text-underline-offset: 0.4em;
-    transition: 0.4s;
+    transform: translateY(-2px);
+    transition: 0.5s;
 }
 
 .main-text {
