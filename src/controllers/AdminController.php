@@ -46,7 +46,7 @@ class AdminController extends AppController {
 
             $orderId = $parts[0];
             $userEmail = $parts[1];
-            $userId = $repoUser->getUser($userEmail)->getId();
+            $userId = $repoUser->getObject($userEmail)->getId();
             $repoOrder->changeObject($orderId, 'w trakcie realizacji');
             $repoEmployeeOrder->createObject($userId, $orderId);
 
@@ -74,7 +74,7 @@ class AdminController extends AppController {
 
         if (isset($_POST['delete']) && !empty($_POST['delete'])) {
             $deleteId = htmlspecialchars($_POST['delete']);
-            $success = $repo->deleteUser($deleteId);
+            $success = $repo->deleteObject($deleteId);
 
             if ($success) {
                 header("Location: /adminUsers");
@@ -87,14 +87,14 @@ class AdminController extends AppController {
 
         if (isset($_POST['add_admin']) && !empty($_POST['add_admin'])) {
             $adminId = htmlspecialchars($_POST['add_admin']);
-            $repo->changeRole($adminId, 'admin');
+            $repo->changeObject($adminId, 'admin');
             header("Location: /adminUsers");
             exit();
         }
 
         if (isset($_POST['add_employee']) && !empty($_POST['add_employee'])) {
             $clientId = htmlspecialchars($_POST['add_employee']);
-            $repo->changeRole($clientId, 'employee');
+            $repo->changeObject($clientId, 'employee');
             header("Location: /adminUsers");
             exit();
         }
@@ -109,7 +109,7 @@ class AdminController extends AppController {
 
         if (isset($_POST['delete']) && !empty($_POST['delete'])) {
             $deleteId = htmlspecialchars($_POST['delete']);
-            $success = $repo->deleteUser($deleteId);
+            $success = $repo->deleteObject($deleteId);
 
             if ($success) {
                 header("Location: /adminUsers");
@@ -122,14 +122,14 @@ class AdminController extends AppController {
 
         if (isset($_POST['add_admin']) && !empty($_POST['add_admin'])) {
             $adminId = htmlspecialchars($_POST['add_admin']);
-            $repo->changeRole($adminId, 'admin');
+            $repo->changeObject($adminId, 'admin');
             header("Location: /adminUsers");
             exit();
         }
 
         if (isset($_POST['add_employee']) && !empty($_POST['add_employee'])) {
             $clientId = htmlspecialchars($_POST['add_employee']);
-            $repo->changeRole($clientId, 'employee');
+            $repo->changeObject($clientId, 'employee');
             header("Location: /adminUsers");
             exit();
         }

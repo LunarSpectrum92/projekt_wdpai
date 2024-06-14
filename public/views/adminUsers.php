@@ -33,7 +33,7 @@
 
 
 
-        $users = $userRepository->getUsers();
+        $users = $userRepository->getObjects();
 
 
    

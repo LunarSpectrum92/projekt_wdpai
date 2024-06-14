@@ -26,8 +26,14 @@
         <input type="password" placeholder="password" name="password">
         <button type="submit" > LOGIN </button>
     </form>
-
     <p> Nie masz jeszcze konta? <a href="http://localhost:8080/register"> Zarejestruj się </a> </p>  
+
+
+
+
+
+
+
 
 </div>
 </div>

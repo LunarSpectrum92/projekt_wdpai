@@ -124,7 +124,7 @@ class DefaultController extends AppController {
             $comments = $_POST['comments'];
     
            
-            $order = $orderRepository->createOrder($usługi, $comments);
+            $order = $orderRepository->createObject($usługi, $comments);
     
             if($order){
                 header("Location: /info");

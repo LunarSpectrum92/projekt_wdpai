@@ -37,7 +37,7 @@
         $EmployeeOrdersRepo = new EmployeeOrdersRepository();
 
         if(isset($_SESSION['userEmail']) && $_SESSION['userEmail'] != ''){
-        $id = $userRepository->getUser($_SESSION['userEmail'])->getId();
+        $id = $userRepository->getObject($_SESSION['userEmail'])->getId();
         $employeeOrders = $EmployeeOrdersRepo->getObjectsById($id);
         }else{
             $url = "http://$_SERVER[HTTP_HOST]";
@@ -53,7 +53,7 @@
             $OrderId = intval($order->getOrderId());
             $UserId = intval($order->getUserId());
             
-            $a = $userRepository->getUser($UserId)->getEmail();  //email
+            $a = $userRepository->getUserById($UserId)->getEmail();  //email
             $d = $orderRepository->getObject($OrderId)->getDate();
             $b = $orderRepository->getObject($OrderId)->getDescription(); //opis zamowienia
             $c = $serviceRepository->getObject($orderRepository->getObject($OrderId)->getServiceId())->getserviceName(); //nazwa uslugi 

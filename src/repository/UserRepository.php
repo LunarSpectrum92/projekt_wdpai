@@ -21,7 +21,7 @@ class UserRepository extends Repository implements RepositoryInterface{
                     ud.city
                 FROM users u
                 LEFT JOIN user_details ud ON u.id = ud.user_id
-                WHERE u.id = :id
+                WHERE u.email = :id
             ');
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
@@ -45,7 +45,7 @@ class UserRepository extends Repository implements RepositoryInterface{
     
         } catch (PDOException $e) {
             error_log("Database error: " . $e->getMessage());
-            return null;  // Return null to indicate an error
+            return null; 
         }
     }
 
@@ -178,6 +178,9 @@ class UserRepository extends Repository implements RepositoryInterface{
         }
     }
 
+
+
+
     public function createUser($name, $surname, $email, $password, $phonenumber, $street, $city) {
         try {
     
@@ -220,6 +223,10 @@ class UserRepository extends Repository implements RepositoryInterface{
         }
     }
 
+
+
+
+
     public function changeObject($id, $role) {
         try {
             $user = $this->getObject($id);
@@ -241,5 +248,55 @@ class UserRepository extends Repository implements RepositoryInterface{
             throw new Exception("Failed to change object role.");
         }
     }
+
+
+
+
+
+    public function getUserById($id) {
+        try {
+            $stmt = $this->DATABASE->getConnection()->prepare('
+                SELECT 
+                    u.id AS user_id, 
+                    u.name, 
+                    u.surname, 
+                    u.email, 
+                    u.password, 
+                    u.role, 
+                    ud.phonenumber, 
+                    ud.street, 
+                    ud.city
+                FROM users u
+                LEFT JOIN user_details ud ON u.id = ud.user_id
+                WHERE u.id = :id
+            ');
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);  
+            if (!$user) {
+                return null;
+            }
+    
+            return new User(
+                $user["user_id"],
+                $user['name'],
+                $user['surname'],
+                $user['email'],
+                $user['password'], 
+                $user['phonenumber'],
+                $user['street'],
+                $user['city'],
+                $user['role']
+            );
+        }catch (PDOException $e) {
+            error_log("Database error: " . $e->getMessage());
+            throw new Exception("Failed to change object role.");
+        }
+    }
+
+
+
+
+
 }
 

@@ -35,9 +35,9 @@
             <li>
                 <?php 
             $repo = new UserRepository();
-            if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true && $repo->getUser($_SESSION['userEmail'])->getRole() == 'client') {
+            if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true && $repo->getObject($_SESSION['userEmail'])->getRole() == 'client') {
                 echo '<a href="myReservations">Rezerwacje</a>';
-            } else if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true && $repo->getUser($_SESSION['userEmail'])->getRole() == 'employee'){
+            } else if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true && $repo->getObject($_SESSION['userEmail'])->getRole() == 'employee'){
                 echo '<a href="myEmployeeOrders">zadania</a>';
             }
             ?>
@@ -75,10 +75,9 @@
             
             <li>
                 <?php 
-            $repo = new UserRepository();
-            if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true && $repo->getUser($_SESSION['userEmail'])->getRole() == 'client') {
+            if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true && $repo->getObject($_SESSION['userEmail'])->getRole() == 'client') {
                 echo '<a href="myReservations">Rezerwacje</a>';
-            } else if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true && $repo->getUser($_SESSION['userEmail'])->getRole() == 'employee'){
+            } else if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true && $repo->getObject($_SESSION['userEmail'])->getRole() == 'employee'){
                 echo '<a href="login">zadania</a>';
             }
             ?>

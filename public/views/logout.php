@@ -34,7 +34,7 @@ if(isset($_SESSION['userEmail']) && $_SESSION['userEmail'] != ''){
         <div class="account-info">
         <?php
             $userRepository = new UserRepository();
-            $user = $userRepository->getUser($_SESSION['userEmail']);
+            $user = $userRepository->getObject($_SESSION['userEmail']);
 
             echo '<p><strong>Imię:</strong> ' . htmlspecialchars($user->getName()) . ' </p>';
             echo '<p><strong>Nazwisko:</strong> ' . htmlspecialchars($user->getSurname()) . '</p>';

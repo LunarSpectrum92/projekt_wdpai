@@ -22,18 +22,19 @@
                         }
                     ?>
                 </div>
-    <input type="text" name="name" placeholder="name" required>
-    <input type="text" name="surname" placeholder="surname" required>
-    <input type="tel" name="phone_number" placeholder="phone number" required>
-    <input type="text" name="city" placeholder="city" required>
-    <input type="text" name="street" placeholder="street" required>
-    <input type="email" name="email" placeholder="email" required>
-    <input type="password" name="password" placeholder="password" required>
-    <input type="password" name="repeat_password" placeholder="repeat password" required>
-    <button type="submit">REGISTER</button>
+                <input type="text" id="name" name="name" placeholder="name" required>
+                <input type="text" id="surname" name="surname" placeholder="surname" required>
+                <input type="tel" id="phone_number" name="phone_number" placeholder="phone number" required>
+                <input type="text" id="city" name="city" placeholder="city" required>
+                <input type="text" id="street" name="street" placeholder="street" required>
+                <input type="email" id="email" name="email" placeholder="email" required>
+                <input type="password" id="password" name="password" placeholder="password" required>
+                <input type="password" id="repeat_password" name="repeat_password" placeholder="repeat password" required>
+                <button type="submit">REGISTER</button>
 </form>
 
-    
+<script src="public/js/walidacjeLogin.js"></script>
+
 
 </div>
 </div>

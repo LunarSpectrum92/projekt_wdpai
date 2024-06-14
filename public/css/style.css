@@ -110,7 +110,9 @@ h1 {
 .container p1 {
     margin: 10px;
 }
-
+.no-valid {
+    border: 1px solid red;
+}
 
 
 

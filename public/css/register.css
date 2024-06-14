@@ -96,6 +96,11 @@ input[type="password"]:hover {
     transition: 0.5s;
 }
 
+
+.no-valid {
+    border: 1px solid red;
+}
+
 button {
     width: 100%;
     height: 5vh;
@@ -116,6 +121,14 @@ button:hover {
 
 .messages {
     margin-bottom: 15px;
+}
+
+.error {
+    border-bottom: 2px solid red;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
 }
 
 

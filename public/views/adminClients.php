@@ -22,12 +22,12 @@
         <?php 
         require_once __DIR__.'/../../src/repository/UserRepository.php';
         $userRepository = new UserRepository();
-        $users = $userRepository->getUsers();
+        $users = $userRepository->getObjects();
 
    
         ?>
         <?php foreach($users as $user): 
-            if($user->getRole != 'client'){
+            if($user->getRole() != 'client'){
                 continue;
             }
             ?>

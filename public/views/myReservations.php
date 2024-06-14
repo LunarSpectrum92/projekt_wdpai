@@ -33,7 +33,7 @@
         $serviceRepository = new ServiceRepository();
         $orderRepository = new OrderRepository();
 
-        $orders = $orderRepository->getObjectsById($userRepository->getUser($_SESSION['userEmail'])->getId());
+        $orders = $orderRepository->getObjectsById($userRepository->getObject($_SESSION['userEmail'])->getId());
 
         ?>
 

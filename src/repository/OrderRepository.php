@@ -12,14 +12,14 @@ class OrderRepository extends Repository implements RepositoryInterface{
 
 
 
-    public function createOrder($service_id, $description){
+    public function createObject($service_id, $description){
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
         try {
             if($_SESSION['role'] == 'client'){
             $userRepository = new UserRepository();
-            $user = $userRepository->getUser($_SESSION['userEmail']);
+            $user = $userRepository->getObject($_SESSION['userEmail']);
             $userId = $user->getId();
             $status = 'oczekujące na przyjęcie';
             $stmt = $this->DATABASE->getConnection()->prepare('
@@ -177,7 +177,6 @@ class OrderRepository extends Repository implements RepositoryInterface{
 
 
     }
-    public function createObject($id, $id1){}
     
     
     

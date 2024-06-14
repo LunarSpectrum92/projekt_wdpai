@@ -25,15 +25,8 @@ Router::get('adminUsers', 'AdminController');
 Router::get('adminClients', 'AdminController');
 Router::get('adminAdmins', 'AdminController');
 Router::get('adminEmployees', 'AdminController');
-
-
-
 Router::get('myEmployeeOrders', 'DefaultController');
 Router::get('ofertatemp', 'DefaultController');
-
-
-
-
 Router::get('adminReservations', 'AdminController');
 Router::get('adminHeader', 'AdminController');
 Router::post('login', 'SecurityController');
