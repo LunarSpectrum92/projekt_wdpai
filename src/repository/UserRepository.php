@@ -239,10 +239,10 @@ class UserRepository extends Repository implements RepositoryInterface{
                 SET role = :role
                 WHERE email = :id
             ');
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->bindParam(':role', $role, PDO::PARAM_STR);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
-    
+    return true;
         } catch (PDOException $e) {
             error_log("Database error: " . $e->getMessage());
             throw new Exception("Failed to change object role.");

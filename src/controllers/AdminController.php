@@ -65,6 +65,9 @@ class AdminController extends AppController {
         ob_end_flush();
     }
 
+
+
+
     public function adminUsers() {
         if (!$this->isPost()) {
             $this->render(AccessController::AccessCheck('adminUsers'));
@@ -86,19 +89,48 @@ class AdminController extends AppController {
         }
 
         if (isset($_POST['add_admin']) && !empty($_POST['add_admin'])) {
-            $adminId = htmlspecialchars($_POST['add_admin']);
-            $repo->changeObject($adminId, 'admin');
+            $zmienne = $_POST['add_admin'];
+            $dane_osobowe = explode(',',  $zmienne);
+            $adminId = htmlspecialchars($dane_osobowe[0]);
+            $adminRole = htmlspecialchars($dane_osobowe[1]);
+                if( $adminRole == 'admin'){
+                    $repo->changeObject($adminId, 'client');
+                }else{ 
+                    $repo->changeObject($adminId, 'admin');
+
+                }
+
             header("Location: /adminUsers");
             exit();
         }
 
+
+
+
         if (isset($_POST['add_employee']) && !empty($_POST['add_employee'])) {
-            $clientId = htmlspecialchars($_POST['add_employee']);
-            $repo->changeObject($clientId, 'employee');
+            $zmienne = $_POST['add_employee'];
+            $dane_osobowe = explode(',',  $zmienne);
+            $adminId = htmlspecialchars($dane_osobowe[0]);
+            $adminRole = htmlspecialchars($dane_osobowe[1]);
+                if( $adminRole == 'employee'){
+                    $repo->changeObject($adminId, 'client');
+                }else{ 
+                    $repo->changeObject($adminId, 'employee');
+
+                }
+
             header("Location: /adminUsers");
             exit();
         }
+
     }
+
+
+
+
+
+
+
 
     public function adminClients() {
         if (!$this->isPost()) {

@@ -43,7 +43,7 @@ Delete.forEach(del =>{
 
 
 rola.forEach(role =>{
-    const card = role.closest('.reservation-card'); // corrected `role` instead of `em`
+    const card = role.closest('.reservation-card'); 
     const roleText = role.textContent;
     const role1 = roleText.replace('Rola: ', '');
     if(role1 == 'admin'){

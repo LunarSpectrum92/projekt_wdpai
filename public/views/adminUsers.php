@@ -66,8 +66,8 @@
         
             <div class="buttons">
             <form class="buttons_form" method="POST">
-                <button class="add_admin" name="add_admin" value="<?php echo htmlspecialchars($user->getEmail()); ?>" type="submit">Dodaj jako admina</button>
-                <button class="add_employee" name="add_employee" value="<?php echo htmlspecialchars($user->getEmail()); ?>" type="submit">Dodaj jako pracownika</button>
+                <button class="add_admin" name="add_admin" value="<?php echo htmlspecialchars($user->getEmail() . ',' . $user->getRole()); ?>" type="submit">Dodaj jako admina</button>
+                <button class="add_employee" name="add_employee" value="<?php echo htmlspecialchars($user->getEmail() . ',' . $user->getRole()); ?>" type="submit">Dodaj jako pracownika</button>
                 <button class="delete" name="delete" value="<?php echo htmlspecialchars($user->getEmail()); ?>" type="submit">Usuń</button>
                 <button class="display_employee_orders" style="display: none;">wyswietl zadania pracownika</button>
 
