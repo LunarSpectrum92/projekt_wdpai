@@ -278,7 +278,7 @@ position: relative;
 
 
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
     .mobile-nav{
         display: none;
     }
